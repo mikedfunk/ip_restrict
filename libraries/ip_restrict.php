@@ -9,7 +9,7 @@
  * @email		mike@mikefunk.com
  *
  * @file		ip_restrict.php
- * @version		1.1.0
+ * @version		1.1.1
  * @date		8/16/12
  */
 
@@ -64,6 +64,11 @@ class ip_restrict
 					$cont = true;
 				}
 			}
+			
+			if (!$cont)
+			{
+				log_message('error', 'ip address ' . $ip . ' not found in whitelist.');
+			}
 		}
 		// blacklist restriction
 		elseif (config_item('ip_restrict_mode') == 'blacklist')
@@ -77,6 +82,11 @@ class ip_restrict
 					$cont = false;
 				}
 			}
+			
+			if (!$cont)
+			{
+				log_message('error', 'ip address ' . $ip . ' found in blacklist.');
+			}
 		}
 		
 		// if access is restricted
@@ -85,7 +95,6 @@ class ip_restrict
 			// show error if configured
 			if (config_item('ip_restrict_action') == 'display_error')
 			{
-				log_message('error', 'ip address ' . $ip . ' not found in whitelist.');
 				echo config_item('ip_restrict_error_message');
 				exit();
 			}

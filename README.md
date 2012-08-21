@@ -8,10 +8,11 @@ Setup
 ----------------------------
 
 1. Install Sparks at [GetSparks.org](http://getsparks.org)
-2. Edit **config/ip_restrict.php** to choose between whitelist or blacklist mode
-3. Edit **config/ip_restrict.php** with your ip address whitelist or blacklist
-4. Edit **config/ip_restrict.php** to choose between display error or redirect mode
-5. Edit **config/ip_restrict.php** with your error message or redirect page
+2. Edit **config/ip_restrict.php**:
+ 1. Choose between _whitelist_ or _blacklist_ mode
+ 2. Edit your ip address _whitelist_ or _blacklist_
+ 3. Choose between _display_error_ or _redirect_ mode
+ 4. Edit your _ip\_restrict\_error\_message_ or _ip\_restrict\_redirect\_url_
 
 Usage
 ----------------------------
@@ -42,6 +43,12 @@ If the user's IP address is restricted based on whitelist or blacklist, it will 
 
 Changelog
 ----------------------------
+
+**1.1.1**
+
+* Fixed incorrect logging
+* Adjusted some comments
+* Updated readme
 
 **1.1.0**
 

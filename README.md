@@ -11,8 +11,18 @@ Setup
 2. Edit **config/ip_restrict.php**:
  1. Choose between _whitelist_ or _blacklist_ mode
  2. Edit your ip address _whitelist_ or _blacklist_
- 3. Choose between _display_error_ or _redirect_ mode
+ 3. Choose between _display\_error_ or _redirect_ mode
  4. Edit your _ip\_restrict\_error\_message_ or _ip\_restrict\_redirect\_url_
+
+**IP Formats**
+
+The format of the IP addresses in the whitelist and blacklist can either be a 
+single IP address or one of the range formats.
+
+* **Single Address:** `127.0.0.1`
+* **Wildcard Format:** `192.168.1.*`
+* **CIDR Format:** `192.168.1.0/24` or `192.168.1.0/255.255.255.0`
+* **Start-End Format:** `192.168.1.0-192.168.1.255`
 
 Usage
 ----------------------------
@@ -43,6 +53,11 @@ If the user's IP address is restricted based on whitelist or blacklist, it will 
 
 Changelog
 ----------------------------
+
+**1.1.2**
+
+* Add ability to use IP ranges in lists
+* Clean up logic in restrict function
 
 **1.1.1**
 
